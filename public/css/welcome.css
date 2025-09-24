@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    font-family: "Inter", sans-serif;
+    height: 97vh;
+}
+
+main {
+    width: 60%;
+    margin-top: 1rem;
+}
+
+main p {
+    text-align: center;
+}
+
+footer {
+    margin-top: 4rem;
+}
+
+span {
+    font-family: "Silkscreen", sans-serif;
+    color: #c1121f;
+    font-weight: bold;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+}
+
+footer {
+    margin-top: 2rem;
+}
+
+button > a > i {
+    font-size: 3rem;
+    color: #780000;
+}
+
+#title,
+#subtitle {
+    margin: 0px;
+}
+
+#title {
+    color: #780000;
+    font-size: 5rem;
+    margin-bottom: -2rem;
+
+    transform: translateX(-40px);
+}
+
+#subtitle {
+    font-family: "Silkscreen", sans-serif;
+    color: #c1121f;
+    font-size: 3.5rem;
+    transform: translateX(110px);
+}
+
+#btn-animated i {
+    display: inline-block;
+    animation: moveRight 0.7s infinite alternate ease-in-out;
+}
+
+@keyframes moveRight {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(20px);
+    }
+}

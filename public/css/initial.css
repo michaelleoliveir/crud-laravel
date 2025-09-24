@@ -1,0 +1,23 @@
+.grid {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(auto-fill, minmax(400px, auto));
+
+    gap: 2rem;
+    margin-inline: 5rem;
+    margin-block: 5rem;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 2rem;
+}
+
+#buttons {
+    display: flex;
+    gap: 1rem;
+}

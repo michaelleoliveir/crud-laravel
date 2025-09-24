@@ -17,7 +17,8 @@
     <main>
         <div class="grid">
             <div>
-                <button type="button" class="btn btn-secondary" id="addButton">
+                <button type="button" class="btn btn-secondary" id="addButton" data-bs-toggle="modal"
+                    data-bs-target="#createModal">
                     <i class="bi bi-plus" style="font-size: 2rem; position: absolute"></i>
                 </button>
             </div>
@@ -25,13 +26,14 @@
                 <div class="card" style="width: 25rem; height: 100%;">
                     <div class="card-body">
                         <h5 class="card-title">{{ $post->title }}</h5>
+                        <p>{{ $post->formatted_data }}</p>
                         <p class="card-text">{{ $post->description }}</p>
                         <div id="buttons">
                             <button class="btn btn-primary" data-bs-toggle="modal"
                                 data-bs-target="#editModal{{ $post->id }}">Edit
                             </button>
 
-                            <form action={{ route('delete', $post->id) }} method="post">
+                            <form action={{ route('posts.destroy', $post->id) }} method="post">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger">Delete</button>
@@ -50,7 +52,7 @@
                                     aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <form action={{ route('update', $post->id) }} method="post">
+                                <form action={{ route('posts.update', $post->id) }} method="post">
                                     @csrf
                                     @method('PUT')
                                     <div class="mb-3">
@@ -73,6 +75,38 @@
                     </div>
                 </div>
             @endforeach
+
+            <div class="modal fade" id="createModal" tabindex="-1" aria-labelledby="createModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="createModalLabel">Create post</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form action={{ route('posts.store') }} method="post">
+                                @csrf
+                                @method('POST')
+                                <div class="mb-3">
+                                    <label for="createTitle" class="col-form-label">Title:</label>
+                                    <input name="title" type="text" class="form-control" id="createTitle">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="createDescription" class="col-form-label">Message:</label>
+                                    <textarea name="description" class="form-control" id="createDescription"></textarea>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary">Send Data</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 

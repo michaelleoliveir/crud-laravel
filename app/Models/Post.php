@@ -10,4 +10,8 @@ class Post extends Model
     use HasFactory;
 
     protected $fillable = ['title', 'description'];
+
+    public function getFormattedDataAttribute() {
+        return $this->created_at->format('d/m/Y');
+    }
 }

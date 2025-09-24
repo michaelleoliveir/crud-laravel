@@ -21,3 +21,19 @@
     display: flex;
     gap: 1rem;
 }
+
+#addButton {
+    padding: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#addButton i {
+    font-size: 2rem;
+    position: relative;
+}

@@ -17,19 +17,18 @@ class PostController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'title' => 'required|string',
+            'description' => 'required|string'
+        ]);
+
+        Post::create($validatedData);
+
+        return redirect()->route('home');
     }
 
     /**

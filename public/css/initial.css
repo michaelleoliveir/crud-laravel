@@ -37,3 +37,31 @@
     font-size: 2rem;
     position: relative;
 }
+
+.search {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem; 
+    margin: 3rem;
+}
+
+.search_input {
+    width: 300px;  
+    max-width: 100%; 
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+}
+
+.btn-icon {
+    background-color: transparent;
+    border: none;
+}
+
+.btn-icon > a > i {
+    font-size: 2rem;
+    padding-inline: 0.5rem;
+    color: #c1121f;
+}

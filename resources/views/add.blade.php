@@ -32,7 +32,19 @@
                 <textarea name="description" id="inputDescription" class="form-control"></textarea>
                 <div id="title" class="form-text">Give us more details</div>
             </div>
-            <button type="button" class="btn btn-danger" onclick="window.location='{{ route('posts.index') }}'">
+            <div>
+                @if ($errors->any())
+                    <div class="error-div">
+                        Something went wrong...
+                    </div>
+                    <ul class="error-ul">
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                @endif
+            </div>
+            <button type="submit" class="btn btn-danger">
                 Add
             </button>
         </form>

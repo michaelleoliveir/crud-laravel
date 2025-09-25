@@ -39,3 +39,25 @@ button {
 .form-label {
     font-weight: bold;
 }
+
+.error-div, .error-ul {
+    padding: 0.6rem;
+    text-align: center;
+}
+
+.error-div {
+    background-color: #c1121f;
+    color: white;
+    border-radius: 1rem 1rem 0rem 0rem;
+}
+
+.error-ul {
+    background-color: #cc4d5578;
+    color: #c1121f;
+    font-weight: bold;
+    border-radius: 0rem 0rem 1rem 1rem;
+}
+
+.error-ul li {
+    list-style-type: none;
+}

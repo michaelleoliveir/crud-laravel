@@ -35,3 +35,7 @@ button {
     margin-bottom: 3rem;
     color: #c1121f;
 }
+
+.form-label {
+    font-weight: bold;
+}

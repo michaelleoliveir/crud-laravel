@@ -57,7 +57,7 @@ class PostController extends Controller
 
         $post->update($validatedData);
 
-        return redirect()->route('home');
+        return redirect()->route('posts.index');
     }
 
     /**

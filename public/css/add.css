@@ -40,24 +40,39 @@ button {
     font-weight: bold;
 }
 
-.error-div, .error-ul {
-    padding: 0.6rem;
-    text-align: center;
-}
-
 .error-div {
-    background-color: #c1121f;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    background-color: #ffd2d1;
     color: white;
-    border-radius: 1rem 1rem 0rem 0rem;
+    border-radius: 1rem;
+    border: 2px solid #fa9796;
 }
 
-.error-ul {
-    background-color: #cc4d5578;
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+}
+
+.icon i {
+    font-size: 2.2rem;
     color: #c1121f;
-    font-weight: bold;
-    border-radius: 0rem 0rem 1rem 1rem;
 }
 
-.error-ul li {
+.text {
+    width: 70%;
+}
+
+.text ul {
+    padding: 1rem;
+    margin: 0rem;
+}
+
+.text>ul>li {
     list-style-type: none;
+    color: #c1121f;
 }

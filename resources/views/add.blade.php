@@ -10,6 +10,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <title>Add Post</title>
 </head>
 
@@ -35,13 +36,17 @@
             <div>
                 @if ($errors->any())
                     <div class="error-div">
-                        Something went wrong...
+                        <div class="icon">
+                            <i class="bi bi-x-circle-fill"></i>
+                        </div>
+                        <div class="text">
+                            <ul class="error-ul">
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
                     </div>
-                    <ul class="error-ul">
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
                 @endif
             </div>
             <button type="submit" class="btn btn-danger">

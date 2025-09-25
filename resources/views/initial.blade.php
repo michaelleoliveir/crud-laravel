@@ -20,26 +20,28 @@
         <div>
 
             <div class="search">
-                
-                    <form method="POST" action="jq.php">
-                        <div class="d-flex justify-content-center h-100">
-                            <div class="searchbar">
-                                <input class="search_input" type="text" name="" placeholder="Search...">
-                                <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
-                            </div>
-                        </div>
-                    </form>
-                
 
-                <button class="btn-icon">
-                    <a href="{{ route('home') }}">
-                        <i class="bi bi-house-door-fill"></i>
-                    </a>
-                </button>
+                <form method="GET" action="{{ route('posts.index') }}">
+                    <div class="d-flex justify-content-center h-100">
+                        <div class="searchbar">
+                            <input class="search_input" type="text" name="search" placeholder="Search..." value="{{ request('search') }}" autocomplete="off">
+                        </div>
+                    </div>
+
+                    <button class="btn-icon" id="btn-search" type="submit">
+                        <a><i class="bi bi-search-heart-fill"></i> </a>
+                    </button>
+                </form>
 
                 <button class="btn-icon">
                     <a href="{{ route('add') }}">
                         <i class="bi bi-patch-plus-fill"></i>
+                    </a>
+                </button>
+
+                <button class="btn-icon">
+                    <a href="{{ route('home') }}">
+                        <i class="bi bi-house-door-fill"></i>
                     </a>
                 </button>
             </div>

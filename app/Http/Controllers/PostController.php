@@ -10,9 +10,17 @@ class PostController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $posts = Post::all();
+        $search = $request->input('search');
+
+        $posts = Post::query()
+            ->when($search, function($query, $search) {
+                return $query->where('title', 'like', "%{$search}%");
+            })
+            ->latest()
+            ->get();
+
         return view('initial', compact('posts'));
     }
 
@@ -59,6 +67,6 @@ class PostController extends Controller
     {
         $post->delete();
 
-        return redirect()->route('home');
+        return redirect()->route('posts.index');
     }
 }

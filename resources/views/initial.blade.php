@@ -36,7 +36,7 @@
                 </button>
 
                 <button class="btn-icon">
-                    <a href="">
+                    <a href="{{ route('add') }}">
                         <i class="bi bi-patch-plus-fill"></i>
                     </a>
                 </button>

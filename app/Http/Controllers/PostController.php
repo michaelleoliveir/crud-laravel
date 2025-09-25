@@ -28,7 +28,7 @@ class PostController extends Controller
 
         Post::create($validatedData);
 
-        return redirect()->route('home');
+        return redirect()->route('posts.index');
     }
 
     /**
